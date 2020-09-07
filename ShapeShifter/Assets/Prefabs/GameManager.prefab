@@ -50,7 +50,6 @@ MonoBehaviour:
   - {fileID: 6797808307198644996, guid: ec96261b30368bb4c929340d98af51a9, type: 3}
   - {fileID: 2523687796979066828, guid: f6aab707cd6a85e4ebad4979731ceb70, type: 3}
   - {fileID: 9121246484795430541, guid: 30ff10a06a06aaf4b8de43262b3790d0, type: 3}
-  - {fileID: 7333999635684570383, guid: 3d94cc77941351943b3e7a8b3b1439fc, type: 3}
   - {fileID: 7167974981312252504, guid: 024c8ccf8c6430c47a8ab0095d713513, type: 3}
   maxShapeRespawnRate: 1
   minShapeRespawnRate: 1

@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private Sprite playerSprite;
     public Sprite PlayerSprite => playerSprite;
 
+    private Sprite currentSprite; 
+
     public bool isPaused = false;
     private bool gameOver = false;
 
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         deathParticle = gameObject.GetComponentInChildren<ParticleSystem>();
+        currentSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
         deathSound = gameObject.GetComponentInChildren<AudioSource>();
     }
 
@@ -43,7 +46,7 @@ public class Player : MonoBehaviour
     {
         //Get shape sprite and player sprite
         Sprite shapeSprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
-        Sprite currentSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+        currentSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
 
         //If the sprites match
         if (shapeSprite == currentSprite)
@@ -76,14 +79,13 @@ public class Player : MonoBehaviour
         {
             int randomSprite = UnityEngine.Random.Range(0, playerSprites.Count());
             playerSprite = playerSprites[randomSprite];
-            print(playerSprite);
             HUDMenu.Instance.DisplayNextSprite(playerSprite);
         }
     }
 
     private IEnumerator PlayerDeath()
     {
-        print(deathParticle);
+        deathParticle.textureSheetAnimation.SetSprite(0, currentSprite);
         deathParticle.Play();
         Debug.Log("Particle Played");
         deathSound.Play();

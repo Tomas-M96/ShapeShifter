@@ -48,3 +48,9 @@ TagManager:
   - name: Shape
     uniqueID: 723965529
     locked: 0
+  - name: Player
+    uniqueID: 2289290721
+    locked: 0
+  - name: Particles
+    uniqueID: 3224118755
+    locked: 0
